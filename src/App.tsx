@@ -251,7 +251,7 @@ function App() {
         <div className="brand-mark">英</div>
         <div>
           <p className="eyebrow">ENGLISH GRAMMAR</p>
-          <h1>英語文法トレーニング</h1>
+          <h1>ボンセ流英語文法トレーニング</h1>
         </div>
       </header>
 
