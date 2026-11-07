@@ -54,3 +54,29 @@ footer { display: flex; justify-content: space-between; gap: 12px; margin-top: a
   .study-card { border-radius: 20px; }
   footer { flex-direction: column; text-align: center; }
 }
+.filter-card {
+  background: #fff; border: 1px solid #e7eaf0; border-radius: 20px;
+  padding: 20px 22px; margin-bottom: 18px; box-shadow: 0 8px 24px rgba(25, 42, 75, .04);
+}
+.filter-heading { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+.filter-card h2 { margin: 0; font-size: 16px; }
+.filter-card p { margin: 5px 0 0; color: #7a8498; font-size: 12px; }
+.select-all-button { border: 1px solid #d9e0eb; background: #f7f8fb; color: #40577f; border-radius: 10px; padding: 8px 12px; font-size: 12px; white-space: nowrap; }
+.category-tree { margin-top: 14px; border-top: 1px solid #edf0f4; max-height: 330px; overflow: auto; padding: 8px 2px; }
+.major-group { padding: 7px 0; border-bottom: 1px solid #edf0f4; }
+.major-group > summary { color: #263b67; }
+.middle-group { margin: 7px 0 7px 22px; }
+.middle-group > summary { color: #43516a; }
+summary { cursor: pointer; list-style-position: outside; font-size: 13px; }
+.check-label { display: inline-flex; align-items: center; gap: 9px; min-height: 28px; cursor: pointer; }
+.check-label input { width: 17px; height: 17px; accent-color: #263b67; flex: 0 0 auto; }
+.small-list { display: flex; flex-wrap: wrap; gap: 4px 14px; margin: 4px 0 8px 28px; }
+.small-label { color: #69758a; font-size: 12px; }
+.filter-count { text-align: right; }
+.empty-message { margin: 0; color: #69758a; text-align: center; line-height: 1.8; }
+@media (max-width: 520px) {
+  .filter-card { padding: 16px; }
+  .filter-heading { align-items: flex-start; }
+  .category-tree { max-height: 280px; }
+  .small-list { margin-left: 20px; }
+}
