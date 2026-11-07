@@ -5,6 +5,15 @@ import examples2 from './data/data2.json'
 import examples3 from './data/data3.json'
 import examples4 from './data/data4.json'
 
+// Google Analytics イベント記録
+function trackEvent(eventName: string) {
+  const gtag = (window as any).gtag
+
+  if (typeof gtag === 'function') {
+    gtag('event', eventName)
+  }
+}
+
 type Example = {
   大分類: string
   中分類: string
@@ -329,7 +338,10 @@ function App() {
         {/* 和訳を見るボタン */}
         <button
           className="reveal-button"
-          onClick={() => setRevealed(true)}
+          onClick={() => {
+  trackEvent('reveal_translation')
+  setRevealed(true)
+}}
           disabled={revealed}
         >
           {revealed
@@ -349,7 +361,10 @@ function App() {
 
           <button
             className="next-button"
-            onClick={nextQuestion}
+            onClick={() => {
+  trackEvent('next_question')
+  nextQuestion()
+}}
           >
             次の問題 <span aria-hidden="true">→</span>
           </button>
