@@ -1,5 +1,8 @@
 import { useEffect, useMemo, useState } from 'react'
-import examples from './data.json'
+import examples1 from './data/data1.json'
+import examples2 from './data/data2.json'
+import examples3 from './data/data3.json'
+import examples4 from './data/data4.json'
 
 type Example = {
   大分類: string
@@ -9,7 +12,12 @@ type Example = {
   和訳: string
 }
 
-const data = examples as Example[]
+const data = [
+  ...(examples1 as Example[]),
+  ...(examples2 as Example[]),
+  ...(examples3 as Example[]),
+  ...(examples4 as Example[]),
+]
 const keyOf = (item: Pick<Example, '大分類' | '中分類' | '小分類'>) =>
   JSON.stringify([item.大分類, item.中分類, item.小分類])
 
