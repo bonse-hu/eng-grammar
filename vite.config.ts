@@ -1,10 +1,10 @@
+
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import { VitePWA } from 'vite-plugin-pwa'
 
 export default defineConfig({
-  // GitHub Pagesで公開するときは、リポジトリ名に合わせて base を変更してください。
-  // 例：リポジトリ名が english-grammar-app の場合は '/english-grammar-app/'
+  // GitHub Pagesの公開先
   base: '/eng-grammar/',
   plugins: [
     react(),
@@ -23,7 +23,8 @@ export default defineConfig({
         icons: []
       },
       workbox: {
-        globPatterns: ['**/*.{js,css,html,ico,png,svg,json}']
+        globPatterns: ['**/*.{js,css,html,ico,png,svg,json}'],
+        maximumFileSizeToCacheInBytes: 10 * 1024 * 1024
       }
     })
   ]
