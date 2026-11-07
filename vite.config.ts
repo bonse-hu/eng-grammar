@@ -5,7 +5,7 @@ import { VitePWA } from 'vite-plugin-pwa'
 export default defineConfig({
   // GitHub Pagesで公開するときは、リポジトリ名に合わせて base を変更してください。
   // 例：リポジトリ名が english-grammar-app の場合は '/english-grammar-app/'
-  base: '/',
+  base: '/eng-grammar/',
   plugins: [
     react(),
     VitePWA({
