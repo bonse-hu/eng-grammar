@@ -60,10 +60,13 @@ function App() {
     return [...unique.values()]
   }, [])
 
-  // 選択中の小分類
-  const [selectedLeaves, setSelectedLeaves] = useState<string[]>(
-    () => leafPaths.map(keyOf)
-  )
+  // 選択中の小分類（初期状態では最初の大分類だけを選択）
+  const [selectedLeaves, setSelectedLeaves] = useState<string[]>(() => {
+    const firstMajor = leafPaths[0]?.大分類
+    return leafPaths
+      .filter((item) => item.大分類 === firstMajor)
+      .map(keyOf)
+  })
 
   // 現在の問題
   const [current, setCurrent] = useState<Example | null>(
