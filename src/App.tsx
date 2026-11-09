@@ -1,4 +1,3 @@
-
 import { useEffect, useMemo, useState } from 'react'
 import examples1 from './data/data1.json'
 import examples2 from './data/data2.json'
@@ -339,9 +338,9 @@ function App() {
         <button
           className="reveal-button"
           onClick={() => {
-  trackEvent('reveal_translation')
-  setRevealed(true)
-}}
+            trackEvent('reveal_translation')
+            setRevealed(true)
+          }}
           disabled={revealed}
         >
           {revealed
@@ -362,9 +361,9 @@ function App() {
           <button
             className="next-button"
             onClick={() => {
-  trackEvent('next_question')
-  nextQuestion()
-}}
+              trackEvent('next_question')
+              nextQuestion()
+            }}
           >
             次の問題 <span aria-hidden="true">→</span>
           </button>
@@ -442,10 +441,7 @@ function CategoryTree({
             key={major}
           >
             <summary>
-              <label
-                className="check-label"
-                onClick={(event) => event.stopPropagation()}
-              >
+              <div className="check-label">
                 <input
                   type="checkbox"
                   checked={
@@ -454,6 +450,7 @@ function CategoryTree({
                       selectedLeaves.includes(key)
                     )
                   }
+                  onClick={(event) => event.stopPropagation()}
                   onChange={(event) =>
                     onGroup(
                       major,
@@ -464,7 +461,7 @@ function CategoryTree({
                 />
 
                 <strong>{major}</strong>
-              </label>
+              </div>
             </summary>
 
             {[...middles.entries()].map(
@@ -478,12 +475,7 @@ function CategoryTree({
                     key={middle}
                   >
                     <summary>
-                      <label
-                        className="check-label"
-                        onClick={(event) =>
-                          event.stopPropagation()
-                        }
-                      >
+                      <div className="check-label">
                         <input
                           type="checkbox"
                           checked={
@@ -491,6 +483,9 @@ function CategoryTree({
                             middleKeys.every((key) =>
                               selectedLeaves.includes(key)
                             )
+                          }
+                          onClick={(event) =>
+                            event.stopPropagation()
                           }
                           onChange={(event) =>
                             onGroup(
@@ -502,7 +497,7 @@ function CategoryTree({
                         />
 
                         {middle}
-                      </label>
+                      </div>
                     </summary>
 
                     <div className="small-list">
