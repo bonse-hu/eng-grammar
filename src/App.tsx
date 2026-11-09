@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from 'react'
+import examples0 from './data/data0.json'
 import examples1 from './data/data1.json'
 import examples2 from './data/data2.json'
 import examples3 from './data/data3.json'
@@ -21,8 +22,9 @@ type Example = {
   和訳: string
 }
 
-// 4つのJSONファイルを1つのデータとして統合
+// 5つのJSONファイルを1つのデータとして統合（data0を先頭に配置）
 const data = [
+  ...(examples0 as Example[]),
   ...(examples1 as Example[]),
   ...(examples2 as Example[]),
   ...(examples3 as Example[]),
